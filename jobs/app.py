@@ -4,6 +4,12 @@ import sqlite3
 PATH = 'db/jobs.sqlite'
 app = Flask(__name__)
 
+def open_connection():
+    connection = getattr(g, '_connection')
+    if connection is None:
+        connection, g._connection = sqlite3.connect(PATH)
+    return connection
+
 
 @app.route("/")
 @app.route("/jobs")
