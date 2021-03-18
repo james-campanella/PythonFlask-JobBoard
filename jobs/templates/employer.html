@@ -1,6 +1,14 @@
 {% extends 'layout.html' %}
 <!-- templates/employer.html -->
 {% block content %}
+  <div>
+    <h1>{{ employer['name'] }}</h1>
+  </div>
+  <div class="description">
+    <p>
+        {{ employer['description'] }}
+    </p>
+  </div>
   <h2>Jobs</h2>
 
   <h2>Reviews</h2>
